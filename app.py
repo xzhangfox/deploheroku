@@ -15,16 +15,20 @@ def home():
 #To use the predict button in our web-app
 @app.route('/predict',methods=['POST'])
 def predict():
-    '''
-    For rendering results on HTML GUI
-    '''
-    int_features = [float(x) for x in request.form.values()]
+    data = request.get_json()
+    # pull the inputs
+    enginesize = data['enginesize']
+    cylinders = data['cylinders']
+    fuel = data['fuel']
+
+    # get the prediction
+    int_features = [enginesize, cylinders, fuel]
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
 
-    output = round(prediction[0], 2)
+    output = jsonify({'enginesize': enginesize, 'cylinders': cylinders, 'fuel':fuel, 'prediction': int(prediction)})
 
-    return render_template('index.html', prediction_text='CO2 Emission of the vehicle is :{}'.format(output))
+    return output
 
 if __name__ == "__main__":
     app.run(debug=True)
