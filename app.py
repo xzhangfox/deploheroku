@@ -24,7 +24,7 @@ def predict():
 
     output = {'predicted': [prediction[0]]}
 
-    return render_template('index.html', prediction_text=output)
+    return render_template('index.html', prediction_text='CO2 Emission of the vehicle is :{}'.format(output))
 
 @app.route('/processjson', methods = ['POST'])
 def processjson():
