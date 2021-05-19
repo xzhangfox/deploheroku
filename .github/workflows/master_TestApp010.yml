@@ -20,7 +20,7 @@ jobs:
     - name: Set up Python version
       uses: actions/setup-python@v1
       with:
-        python-version: '3.7'
+        python-version: '3.8'
 
     - name: Create and start virtual environment
       run: |
@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'TestApp010'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_829088e0cede4df19fa5682e4e66bc68 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_4314b195aed5482685c7a11c3f9dbe64 }}
