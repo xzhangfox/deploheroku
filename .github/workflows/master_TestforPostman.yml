@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'TestforPostman'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_fb7194a75cd84eb4b4a61eeeee4f0817 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_381b82c635fa4cb4a373c40291c3600f }}
